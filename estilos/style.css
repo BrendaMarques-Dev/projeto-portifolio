@@ -67,6 +67,11 @@ main {
   margin-top: 20px;
 }
 
+p {
+  text-indent: 20px;
+  text-align: justify
+}
+
 section#ficha {
   background-color: var(--fundo-card);
   padding: 20px;
