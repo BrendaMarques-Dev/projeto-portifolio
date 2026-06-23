@@ -24,11 +24,21 @@
   
 }
 
+body.escuro {
+  --fundo-principal: #222222;
+  --texto: #e0e0e0;
+  --texto-inverso: #333333;
+  --destaque: #ff5522;
+  --destaque-inverso: #a73917;
+  --fundo-card: #444444;
+}
+
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
    line-height: 1.5em; /* faz o espaçamento entre as linhas */
   background-color: var(--fundo-principal);
   color: var(--texto);
+  transition: background-color 0.5s, color 0.5s;
 }
 
 header {
@@ -38,6 +48,9 @@ header {
   display: flex;
   justify-content: flex-end;
   align-content: center ;
+  position: sticky;
+  top: 0;
+  z-index: 1; /*pra fazer uma camada e fazer a barra fixa ficar por cima das coisas*/
 }
 
 #menu ul {
@@ -265,6 +278,21 @@ footer a:hover {
 
 
 @media screen and (min-width: 768px) {
+  main {
+    grid-template-columns: auto 300px 1fr auto;
+  }
+  
+  section#ficha {
+    grid-column: 2 / 3;
+    height: fit-content; /* faz fica da altura do conteudo da tela*/
+    position: sticky; /*fixa na tela*/
+    top: 65px;
+  }
+  
+  section#detalhes {
+    grid-column: 3 / 4;
+  }
+
   #skill-container {
     grid-template-columns: 1fr 1fr;
   }
